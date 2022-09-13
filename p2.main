@@ -1,0 +1,20 @@
+
+public class p2 {
+    public static void main(String[] args) 
+    {
+        Vector<Concrete> obj = new Vector<Concrete>(5);
+        Concrete c[] = new Concrete[5];
+        for (int i = 0; i < 5; i++) {
+            c[i] = new Concrete();
+        }
+        for (int i = 0; i < 5; i++) {
+            obj.add(c[i]);
+        }
+        for (int i = 0; i < 5; i++) {
+            obj.elementAt(i).show1();
+            obj.elementAt(i).show2();
+            obj.elementAt(i).display1();
+            obj.elementAt(i).display2();
+        }
+    }
+}
