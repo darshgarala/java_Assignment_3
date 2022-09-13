@@ -1,0 +1,11 @@
+
+public class p3 {
+    public static void main(String arg[]) 
+    {
+        pr3 i1 = new pr3();
+        i1.display_1();
+        i1.display_2();
+        i1.display_3();
+        i1.display_4();
+    }
+}
