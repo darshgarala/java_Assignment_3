@@ -1,20 +1,28 @@
 
 public class p2 {
-    public static void main(String[] args) 
-    {
-        Vector<Concrete> obj = new Vector<Concrete>(5);
-        Concrete c[] = new Concrete[5];
+    public static void main(String[] args) {
+        Details d[] = new Details[5];
+        d[0] = new Details();
+        d[1] = new Details();
+        d[2] = new Details();
+        d[3] = new Details();
+        d[4] = new Details();
+        Vector<Details> object1 = new Vector<Details>();
+        object1.add(d[0]);
+        object1.add(d[1]);
+        object1.add(d[2]);
+        object1.add(d[3]);
+        object1.add(d[4]);
         for (int i = 0; i < 5; i++) {
-            c[i] = new Concrete();
+            System.out.println("For " + (i + 1) + " Detail ");
+            d[i].getPersonalDetails();
+            d[i].getJobDetails();
+            // System.out.println("\n");
         }
-        for (int i = 0; i < 5; i++) {
-            obj.add(c[i]);
+        for (int j = 0; j < 5; j++) {
+            d[j].displayPersonalDetails();
+            d[j].displayJobDetails();
         }
-        for (int i = 0; i < 5; i++) {
-            obj.elementAt(i).show1();
-            obj.elementAt(i).show2();
-            obj.elementAt(i).display1();
-            obj.elementAt(i).display2();
-        }
+
     }
 }
