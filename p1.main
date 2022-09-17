@@ -1,14 +1,17 @@
 public class p1 {
-    public static void main(String[] args) {   
-   
-        Circle c = new Circle("Red",true, 2.5);   
-        Rectangle r = new Rectangle("Green",true,5,3);             
-        System.out.println("Area of circle :"+c.getArea());   
-        System.out.println("Perimeter of circle :"+c.getPerimeter());   
-        System.out.println("Diameter of Circle :"+c.getDiameter());    
-        System.out.println("\nArea of Rectangle :"+r.getArea());   
+        public static void main(String[] args) {
+            Circle1 obj1 = new Circle1(2.1, "Red", true);
+            Rectangle obj2 = new Rectangle(4.58, 2.27, "White", false);
+            System.out.println("For Circle :-");
+            System.out.println("Radius : " + obj1.getRadius());
+            System.out.println("Diameter : " + obj1.getDiameter());
+            System.out.println("Perimeter : " + obj1.getPerimeter());
+            System.out.println("Area : " + obj1.getArea());
+            System.out.println("\nFor Rectangle :-");
+            System.out.println("Width : " + obj2.getWidth());
+            System.out.println("Height : " + obj2.getHeight());
+            System.out.println("Perimeter : " + obj2.getPerimeter());
+            System.out.println("Area : " + obj2.getArea());
 
-        System.out.println("Perimeter of Rectangle :"+r.getPerimeter());   
-   
-    }
+        }
 }
