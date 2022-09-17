@@ -1,33 +1,48 @@
-import java.util.Vector;
+import java.util.Scanner;
+import java.util.*;
 
-interface Prac_2_Interface {
-    public int x = 7;
+interface IPrinter {
+    void displayPersonalDetails();
 
-    void display1();
-
-    default void show1() {
-        System.out.println("This is default in interface");
-    }
+    void displayJobDetails();
 }
 
-interface Iscanner {
-    public int y = 7;
+interface IScanner {
+    void getPersonalDetails();
 
-    void display2();
-
-    default void show2() {
-        System.out.println("This is default in interface");
-    }
+    void getJobDetails();
 }
 
-class Concrete implements Prac_2_Interface, Iscanner {
-    public void display1() {
+class Details implements IPrinter, IScanner {
+    String name;
+    String address;
+    String city;
+    String companyName;
+    double salary;
+    // creating object of scanner class
+    Scanner object = new Scanner(System.in);
 
-        System.out.println("Display1");
+    public void getPersonalDetails() {
+        System.out.print("Enter Name : ");
+        name = object.nextLine();
+        System.out.print("Enter Address : ");
+        address = object.nextLine();
     }
 
-    public void display2() {
-        System.out.println("Display2");
+    public void getJobDetails() {
+        System.out.print("Enter Company Name : ");
+        companyName = object.nextLine();
+        System.out.print("Enter Salary : ");
+        salary = object.nextInt();
     }
 
+    public void displayPersonalDetails() {
+        System.out.println("Your Name : " + name);
+        System.out.println("Your Address : " + address);
+    }
+
+    public void displayJobDetails() {
+        System.out.println("Company Name : " + companyName);
+        System.out.println("Salary : " + salary);
+    }
 }
