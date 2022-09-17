@@ -1,114 +1,144 @@
+import java.util.Date;
 
-import java.util.Scanner;
-abstract class pr1 {
+//creating abstract super class
+abstract class GeometricObject {
     String color;
-    boolean filled;
-    // Date dateCreated;
+    boolean filledOrNot;
+    // creating object of class Date
+    Date dateCreated = new Date();
 
-    protected pr1() {
+    // creating default constructor
+    GeometricObject() {
     }
 
-    public pr1(String color, boolean filled) {
+    // creating parameterized constructor
+    GeometricObject(String color, boolean filledOrNot) {
         this.color = color;
-        this.filled = filled;
+        this.filledOrNot = filledOrNot;
     }
 
-    public String getColor() {
-        return color;
-    }
-
+    // creating method to set color
     public void setColor(String color) {
         this.color = color;
     }
 
-    public boolean isFilled() {
-        return filled;
+    // creating method to get color
+    public String getColor() {
+        return color;
     }
 
+    // creating method to set filled
     public void setFilled(boolean filled) {
-        this.filled = filled;
+        filledOrNot = filled;
     }
 
-    // public Date getDateCreated() {
-    //     return dateCreated;
-    // }
+    // creating method to check filled or not
+    public boolean isFilled() {
+        return filledOrNot;
+    }
 
+    // creating method for date
+    public void getDateCreated() {
+        System.out.println("Created on: " + dateCreated.toString());
+    }
+
+    // creating abstract methods for area and shape
     abstract public double getArea();
 
     abstract public double getPerimeter();
 }
 
-class Circle extends pr1 {
-    double radius;
+class Circle1 extends GeometricObject {
+    private double radius;
 
-    public Circle() {
-        radius = 0;
+    // creating default constructor
+    Circle1() {
     }
 
-    public Circle(String color, boolean filled, double radius) {
+    // creating parameterized constructor
+    Circle1(double radius) {
+        this.radius = radius;
+    }
+
+    // creating another parameterized constructor
+    Circle1(double radius, String color, boolean filled) {
         super(color, filled);
         this.radius = radius;
-
     }
 
-    public void setRadius(double radius) {
-        this.radius = radius;
+    // creating method to set radius
+    public void setRadius(double r) {
+        radius = r;
     }
 
+    // creating method for get radius
     public double getRadius() {
         return radius;
     }
 
+    // creating method to get diameter
     public double getDiameter() {
-        return 2 * radius;
+        return radius * 2;
     }
 
+    // implementing method for area
     public double getArea() {
-        return (radius * radius * 3.14);
+        return (22 * radius * radius) / 7;
     }
 
+    // creating method for perimeter
     public double getPerimeter() {
-        return (2 * 3.14 * radius);
+        return (2 * 22 * radius) / 7;
     }
 }
 
-class Rectangle extends pr1 {
-    double width;
-    double height;
+class Rectangle extends GeometricObject {
+    private double width;
+    private double height;
 
-    public Rectangle() {
-        width = 0;
-        height = 0;
+    // creating default constructor
+    Rectangle() {
     }
 
-    public Rectangle(String color, boolean filled, double width, double height) {
+    // creating parameterized constructor
+    Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    // creating another parameterized constructor for super class
+    Rectangle(double width, double height, String color, boolean filled) {
         super(color, filled);
         this.width = width;
         this.height = height;
     }
 
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public double getWidth() {
-
-        return width;
-    }
-
+    // creating method to set width
     public void setWidth(double width) {
         this.width = width;
     }
 
-    public double getArea() {
-        return (height * width);
+    // creating method to getWidth
+    public double getWidth() {
+        return width;
     }
 
-    public double getPerimeter() {
-        return (2 * (height + width));
+    // creating method to setHeight
+    public void setHeight(double height) {
+        this.height = height;
     }
-}
+
+    // creating method for getHeight
+    public double getHeight() {
+        return height;
+    }
+
+    // implementing method to getArea for rectangle
+    public double getArea() {
+        return width * height;
+    }
+
+    // implementing method to getPerimeter for rectangle
+    public double getPerimeter() {
+        return (2 * (width + height));
+    }
