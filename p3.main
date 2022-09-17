@@ -1,11 +1,10 @@
 
 public class p3 {
-    public static void main(String arg[]) 
-    {
-        pr3 i1 = new pr3();
-        i1.display_1();
-        i1.display_2();
-        i1.display_3();
-        i1.display_4();
+    public static void main(String[] args) {
+        implementingInterface iI1 = new implementingInterface();
+        iI1.displayP1();
+        iI1.displayP2();
+        iI1.displayP12();
     }
+
 }
